@@ -31,7 +31,7 @@ class SignIn(View):
             return redirect('boards')
 
         else:
-            response = JsonResponse({"error": "Invalid Credential"})
+            response = JsonResponse({"error": "بيانات تسجيل دخول غير صحيحة"})
             response.status_code = 403
             return response
 
@@ -62,7 +62,7 @@ class SignUp(View):
             return redirect('boards')
 
         except:
-            response = JsonResponse({"error": "Duplicate User or Server error"})
+            response = JsonResponse({"error": "المستخدم موجود أو خطأ في الخادم"})
             response.status_code = 403
             return response
 

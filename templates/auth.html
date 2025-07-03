@@ -5,7 +5,7 @@
     <link href="{% static '/css/pages/login/login-2.css' %}" rel="stylesheet" type="text/css"/>
 {% endblock %}
 
-{% block title %}Task Manager Login{% endblock %}
+{% block title %}تسجيل الدخول{% endblock %}
 
 
 {% block content %}
@@ -28,15 +28,15 @@
                                   method="post">{% csrf_token %}
                                 <!--begin::Title-->
                                 <div class="text-center pb-8">
-                                    <h2 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">Sing In</h2>
-                                    <span class="text-muted font-weight-bold font-size-h4">OR
-										<a href="" class="text-primary font-weight-bolder"
-                                           id="kt_login_signup">Sing Up</a></span>
+                                    <h2 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">تسجيل الدخول</h2>
+                                    <span class="text-muted font-weight-bold font-size-h4">أو
+                                                                               <a href="" class="text-primary font-weight-bolder"
+                                           id="kt_login_signup">تسجيل حساب</a></span>
                                 </div>
                                 <!--end::Title-->
                                 <!--begin::Form group-->
                                 <div class="form-group">
-                                    <label class="font-size-h6 font-weight-bolder text-dark">Username</label>
+                                    <label class="font-size-h6 font-weight-bolder text-dark">اسم المستخدم</label>
                                     <input id="in-email"
                                            class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
                                            type="text"
@@ -46,10 +46,10 @@
                                 <!--begin::Form group-->
                                 <div class="form-group">
                                     <div class="d-flex justify-content-between mt-n5">
-                                        <label class="font-size-h6 font-weight-bolder text-dark pt-5">Password</label>
+                                        <label class="font-size-h6 font-weight-bolder text-dark pt-5">كلمة المرور</label>
                                         <a href="javascript:;"
                                            class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5"
-                                           id="kt_login_forgot">Forgot Password</a>
+                                           id="kt_login_forgot">نسيت كلمة المرور</a>
                                     </div>
                                     <input id="in-password"
                                            class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
@@ -59,7 +59,7 @@
                                 <!--begin::Action-->
                                 <div class="text-center pt-2">
                                     <button id="kt_login_signin_submit"
-                                            class="btn btn-dark font-weight-bolder font-size-h6 px-8 py-4 my-3">Sign In
+                                            class="btn btn-dark font-weight-bolder font-size-h6 px-8 py-4 my-3">دخول
                                     </button>
                                 </div>
                                 <!--end::Action-->
@@ -74,34 +74,33 @@
                                   method="post">{% csrf_token %}
                                 <!--begin::Title-->
                                 <div class="text-center pb-8">
-                                    <h2 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">Sign Up</h2>
-                                    <p class="text-muted font-weight-bold font-size-h4">Enter your details to create
-                                        your
-                                        account</p>
+                                    <h2 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">إنشاء حساب</h2>
+                                    <p class="text-muted font-weight-bold font-size-h4">أدخل بياناتك لإنشاء
+                                        حسابك</p>
                                 </div>
                                 <!--end::Title-->
                                 <!--begin::Form group-->
                                 <div class="form-group">
                                     <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
-                                           type="text" placeholder="Username" name="username" autocomplete="off"/>
+                                           type="text" placeholder="اسم المستخدم" name="username" autocomplete="off"/>
                                 </div>
                                 <!--end::Form group-->
                                 <!--begin::Form group-->
                                 <div class="form-group">
                                     <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
-                                           type="email" placeholder="Email" name="email" autocomplete="off"/>
+                                           type="email" placeholder="البريد الإلكتروني" name="email" autocomplete="off"/>
                                 </div>
                                 <!--end::Form group-->
                                 <!--begin::Form group-->
                                 <div class="form-group">
                                     <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
-                                           type="password" placeholder="Password" name="password" autocomplete="off"/>
+                                           type="password" placeholder="كلمة المرور" name="password" autocomplete="off"/>
                                 </div>
                                 <!--end::Form group-->
                                 <!--begin::Form group-->
                                 <div class="form-group">
                                     <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
-                                           type="password" placeholder="Confirm password" name="cpassword"
+                                           type="password" placeholder="تأكيد كلمة المرور" name="cpassword"
                                            autocomplete="off"/>
                                 </div>
                                 <!--end::Form group-->
@@ -109,11 +108,11 @@
                                 <div class="form-group d-flex flex-wrap flex-center pb-lg-0 pb-3">
                                     <button type="button" id="kt_login_signup_submit"
                                             class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mx-4">
-                                        Submit
+                                        إرسال
                                     </button>
                                     <button type="button" id="kt_login_signup_cancel"
                                             class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mx-4">
-                                        Cancel
+                                        إلغاء
                                     </button>
                                 </div>
                                 <!--end::Form group-->
@@ -127,28 +126,27 @@
                             <form class="form" novalidate="novalidate" id="kt_login_forgot_form">
                                 <!--begin::Title-->
                                 <div class="text-center pb-8">
-                                    <h2 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">Forgotten
-                                        Password
+                                    <h2 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">نسيت كلمة المرور
                                     </h2>
-                                    <p class="text-muted font-weight-bold font-size-h4">Enter your email to reset your
-                                        password</p>
+                                    <p class="text-muted font-weight-bold font-size-h4">أدخل بريدك الإلكتروني لإعادة تعيين
+                                        كلمة المرور</p>
                                 </div>
                                 <!--end::Title-->
                                 <!--begin::Form group-->
                                 <div class="form-group">
                                     <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
-                                           type="email" placeholder="Email" name="email" autocomplete="off"/>
+                                           type="email" placeholder="البريد الإلكتروني" name="email" autocomplete="off"/>
                                 </div>
                                 <!--end::Form group-->
                                 <!--begin::Form group-->
                                 <div class="form-group d-flex flex-wrap flex-center pb-lg-0 pb-3">
                                     <button type="button" id="kt_login_forgot_submit"
                                             class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mx-4">
-                                        Submit
+                                        إرسال
                                     </button>
                                     <button type="button" id="kt_login_forgot_cancel"
                                             class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mx-4">
-                                        Cancel
+                                        إلغاء
                                     </button>
                                 </div>
                                 <!--end::Form group-->

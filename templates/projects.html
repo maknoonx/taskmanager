@@ -80,9 +80,8 @@
                                     <!--begin::Heading-->
                                     <div class="d-flex flex-column">
                                         <!--begin::Title-->
-                                        <h2 class="text-white font-weight-bold my-2 mr-5">Projects</h2>
-                                        <h5 class="text-success font-weight-bold">Create your Boards, Teams or Projects
-                                            Here</h5>
+                                        <h2 class="text-white font-weight-bold my-2 mr-5">المشاريع</h2>
+                                        <h5 class="text-success font-weight-bold">أنشئ لوحاتك أو فرقك أو مشاريعك هنا</h5>
                                         <!--end::Title-->
                                     </div>
                                     <!--end::Heading-->
@@ -92,18 +91,18 @@
                                 <div class="d-flex align-items-center">
                                     <!--begin::Button-->
                                     <a href="/report"
-                                       class="btn btn-transparent-white font-weight-bold py-3 px-6 mr-2">Reports</a>
+                                       class="btn btn-transparent-white font-weight-bold py-3 px-6 mr-2">التقارير</a>
                                     <!--end::Button-->
                                     <!--begin::Dropdown-->
                                     <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip"
-                                         title="Add New Project or Team"
+                                         title="إضافة مشروع أو فريق جديد"
                                          data-placement="top">
 
                                         <!-- Button  modal-->
                                         <button type="button" class="btn btn-white font-weight-bold py-3 px-6"
                                                 data-toggle="modal"
                                                 data-target="#exampleModal">
-                                            New
+                                            جديد
                                         </button>
 
                                         <!-- Modal-->
@@ -113,7 +112,7 @@
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">New Project
+                                                        <h5 class="modal-title" id="exampleModalLabel">مشروع جديد
                                                         </h5>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                                 aria-label="Close">
@@ -123,29 +122,29 @@
                                                     <div class="modal-body">
                                                         <form id="add_board_from" method="post">{% csrf_token %}
                                                             <div class="form-group">
-                                                                <label>Name
+                                                                <label>الاسم
                                                                     <span class="text-danger">*</span></label>
                                                                 <input id="iname" name="name" type="text"
                                                                        class="form-control form-control-lg"
-                                                                       placeholder="My Project">
+                                                                       placeholder="مشروعي">
                                                             </div>
                                                             <div class="form-group">
-                                                                <label>Description
+                                                                <label>الوصف
                                                                     <span class="text-danger">*</span></label>
                                                                 <input id="idesc" name="desc" type="text"
                                                                        class="form-control form-control-lg"
-                                                                       placeholder="Description">
+                                                                       placeholder="الوصف">
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="Textarea">Details
+                                                                <label for="Textarea">التفاصيل
                                                                     <span class="text-danger">*</span></label>
                                                                 <textarea name="details" class="form-control"
                                                                           id="idetails"
                                                                           rows="3"
-                                                                          placeholder="Say More ..."></textarea>
+                                                                          placeholder="قل المزيد..."></textarea>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label>Select Users
+                                                                <label>اختيار المستخدمين
                                                                     <span class="text-danger">*</span></label><br>
                                                                 <select name="users" style="width: 100%"
                                                                         class="form-control form-control-lg select2"
@@ -159,11 +158,10 @@
                                                             <div class="form-group">
                                                                 <button type="button"
                                                                         class="btn btn-light-primary font-weight-bold"
-                                                                        data-dismiss="modal">Close
+                                                                        data-dismiss="modal">إغلاق
                                                                 </button>
                                                                 <button id="psubmit" type="submit"
-                                                                        class="btn btn-primary font-weight-bold">Save
-                                                                    changes
+                                                                        class="btn btn-primary font-weight-bold">حفظ
                                                                 </button>
                                                             </div>
                                                         </form>
@@ -215,7 +213,7 @@
                                                 <!--begin::Toolbar-->
                                                 <div class="card-toolbar mb-7">
                                                     <div class="dropdown dropdown-inline" data-toggle="tooltip"
-                                                         title="Quick actions" data-placement="left">
+                                                         title="إجراءات سريعة" data-placement="left">
                                                         <a href="#"
                                                            class="btn btn-clean btn-hover-light-primary btn-sm btn-icon"
                                                            data-toggle="dropdown" aria-haspopup="true"
@@ -232,7 +230,7 @@
 																			<span class="navi-icon">
 																				<i class="flaticon2-delete"></i>
 																			</span>
-                                                                        <span class="navi-text">Remove</span>
+                                                                        <span class="navi-text">حذف</span>
                                                                     </a>
                                                                 </li>
                                                             </ul>
@@ -248,7 +246,7 @@
                                             <!--end::Description-->
                                             <!--begin::Progress-->
                                             <div class="d-flex mb-5 align-items-cente">
-                                                <span class="d-block font-weight-bold mr-5">Progress</span>
+                                                <span class="d-block font-weight-bold mr-5">التقدم</span>
                                                 <div class="d-flex flex-row-fluid align-items-center">
                                                     <div class="progress progress-xs mt-2 mb-2 w-100">
                                                         <div class="progress-bar bg-success" role="progressbar"
@@ -261,7 +259,7 @@
                                             </div>
                                             <!--ebd::Progress-->
                                             <div class="d-flex flex-column flex-lg-fill float-left mb-7">
-                                                <span class="font-weight-bolder mb-4">Members</span>
+                                                <span class="font-weight-bolder mb-4">الأعضاء</span>
                                                 <div class="symbol-group symbol-hover">
                                                     {% for user in proj.users %}
                                                         <div class="symbol symbol-30 symbol-circle"
@@ -298,7 +296,7 @@
 														</span>
                                                     <a href="/boards/{{ proj.project.id }}"
                                                        class="font-weight-bolder text-primary ml-2">
-                                                        {{ proj.tasks }} Tasks</a>
+                                                        {{ proj.tasks }} مهمة</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -489,8 +487,8 @@
                             </div>
                         </div>
                         <div class="navi-text">
-                            <div class="font-weight-bold">My Tasks</div>
-                            <div class="text-muted">latest tasks</div>
+                            <div class="font-weight-bold">مهامي</div>
+                            <div class="text-muted">أحدث المهام</div>
                         </div>
                     </div>
                 </a>
