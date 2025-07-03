@@ -1,7 +1,7 @@
 {% extends 'projects.html' %}
 {% load static %}
 
-{% block title %}Tasks{% endblock %}
+{% block title %}المهام{% endblock %}
 
 {% block css %}
     <link href="{% static '/plugins/custom/kanban/kanban.bundle.css' %}" rel="stylesheet" type="text/css"/>
@@ -20,7 +20,7 @@
                     <!--begin::Heading-->
                     <div class="d-flex flex-column">
                         <!--begin::Title-->
-                        <h2 class="text-white font-weight-bold my-2 mr-5">Tasks in "{{ proj.name }}"</h2>
+                        <h2 class="text-white font-weight-bold my-2 mr-5">المهام في "{{ proj.name }}"</h2>
                         <!--end::Title-->
                         <!--begin::Breadcrumb-->
                         <div class="d-flex align-items-center font-weight-bold my-2">
@@ -47,7 +47,7 @@
                 <div class="card card-custom gutter-b">
                     <div class="card-header">
                         <div class="card-title">
-                            <h3 class="card-label">Tasks</h3>
+                            <h3 class="card-label">المهام</h3>
                         </div>
                     </div>
                     <div class="card-body">
@@ -58,7 +58,7 @@
                                 <button type="button" class="btn font-weight-bold btn-light-primary mr-5"
                                         data-toggle="modal"
                                         data-target="#exampleModal">
-                                    Add Task
+                                    إضافة مهمة
                                 </button>
                                 <!-- Modal-->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -67,8 +67,7 @@
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Add New
-                                                    Task</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">إضافة مهمة جديدة</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                     <i aria-hidden="true" class="ki ki-close"></i>
@@ -77,21 +76,21 @@
                                             <div class="modal-body">
                                                 <form id="add_board_from" method="post">{% csrf_token %}
                                                     <div class="form-group">
-                                                        <label>Name
+                                                        <label>الاسم
                                                             <span class="text-danger">*</span></label>
                                                         <input id="iname" name="name" type="text"
                                                                class="form-control form-control-lg"
-                                                               placeholder="Task">
+                                                               placeholder="المهمة">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Description
+                                                        <label>الوصف
                                                             <span class="text-danger">*</span></label>
                                                         <input id="idesc" name="desc" type="text"
                                                                class="form-control form-control-lg"
-                                                               placeholder="Details ...">
+                                                               placeholder="التفاصيل ...">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Select DeadLine
+                                                        <label>اختيار موعد الانتهاء
                                                             <span class="text-danger">*</span></label>
                                                         <div class="input-group date">
                                                             <input name="date" type="text"
@@ -105,7 +104,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Select User
+                                                        <label>اختيار المستخدم
                                                             <span class="text-danger">*</span></label><br>
                                                         <select name="users" style="width: 100%"
                                                                 class="form-control form-control-lg select2"
@@ -119,11 +118,10 @@
                                                     <div class="form-group">
                                                         <button type="button"
                                                                 class="btn btn-light-primary font-weight-bold"
-                                                                data-dismiss="modal">Close
+                                                                data-dismiss="modal">إغلاق
                                                         </button>
                                                         <button id="psubmit" type="submit"
-                                                                class="btn btn-primary font-weight-bold">Save
-                                                            changes
+                                                                class="btn btn-primary font-weight-bold">حفظ
                                                         </button>
                                                     </div>
                                                 </form>
@@ -141,7 +139,7 @@
                     <div class="card-header">
                         <div class="card-title">
                             <h3 class="card-label">
-                                Calendar
+                                التقويم
                             </h3>
                         </div>
                     </div>
@@ -202,8 +200,8 @@
                                         </a>
                                     </div>
 
-                                    <span class="label label-inline label-light-info">Start Time: {{ t.start_time }}</span>
-                                    <span class="label label-inline label-light-success">End Time: {{ t.end_time }}</span>
+                                    <span class="label label-inline label-light-info">وقت البدء: {{ t.start_time }}</span>
+                                    <span class="label label-inline label-light-success">وقت الانتهاء: {{ t.end_time }}</span>
                                 </div>
                             </div>
                         </div>
@@ -239,7 +237,7 @@
                     boards: [
                         {
                             'id': 'T',
-                            'title': 'To Do',
+                            'title': 'قيد التنفيذ',
                             'class': 'light-danger',
                             'item': [
                                 {% for t in tasks %}
@@ -263,7 +261,7 @@
                         },
                         {
                             'id': 'D',
-                            'title': 'In Progress',
+                            'title': 'جارٍ العمل',
                             'class': 'light-primary',
                             'item': [{% for t in tasks %}
                                 {% if t.status == 'D' %}
@@ -286,7 +284,7 @@
                         },
                         {
                             'id': 'I',
-                            'title': 'In Test',
+                            'title': 'قيد الاختبار',
                             'class': 'light-primary',
                             'item': [{% for t in tasks %}
                                 {% if t.status == 'I' %}
@@ -309,7 +307,7 @@
                         },
                         {
                             'id': 'O',
-                            'title': 'Done',
+                            'title': 'منجز',
                             'class': 'light-success',
                             'item': [{% for t in tasks %}
                                 {% if t.status == 'O' %}
@@ -332,7 +330,7 @@
                         },
                         {
                             'id': 'B',
-                            'title': 'Blocked',
+                            'title': 'متوقف',
                             'class': 'light-danger',
                             'item': [{% for t in tasks %}
                                 {% if t.status == 'B' %}
@@ -355,7 +353,7 @@
                         },
                         {
                             'id': 'L',
-                            'title': 'Deleted',
+                            'title': 'محذوف',
                             'class': 'light-dark',
                             'item': [{% for t in tasks %}
                                 {% if t.status == 'L' %}
@@ -450,9 +448,9 @@
                         {#now: TODAY + 'T09:25:00', // just for demo#}
 
                         views: {
-                            dayGridMonth: {buttonText: 'month'},
-                            timeGridWeek: {buttonText: 'week'},
-                            timeGridDay: {buttonText: 'day'}
+                            dayGridMonth: {buttonText: 'شهر'},
+                            timeGridWeek: {buttonText: 'أسبوع'},
+                            timeGridDay: {buttonText: 'يوم'}
                         },
 
                         defaultView: 'dayGridMonth',
